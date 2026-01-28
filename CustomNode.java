@@ -17,6 +17,9 @@ public class CustomNode{
     public void setNextNode(CustomNode nextNode){
         this.NextNode = nextNode;
     }
+    public CustomNode getNextNode(){
+        return NextNode;
+    }
     public String getValue(){
         return value;
     }
