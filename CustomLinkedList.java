@@ -17,6 +17,30 @@ public class CustomLinkedList {
             size++;
             return;
         }
+
+        CustomNode current = head;
+        while(current.getNextNode() != null){
+            current = current.getNextNode();
+        }
+        current.setNextNode(newNode);
+        size++;
+    }
+    public String get(int index){
+        if(index < 0 || index >= size){
+            return null;
+        }
+        if(index == 0){
+            return head.getValue();
+        }
+        else if(index == 1){
+            return head.getNextNode().getValue();
+        }
+        
+        CustomNode current = head;
+        for(int i = 0; i < index; i++){
+            current = current.getNextNode();
+        }
+        return current.getValue();
     }
     public int getSize(){
         return size;
